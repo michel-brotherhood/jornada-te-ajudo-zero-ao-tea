@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   const scrollToEnroll = () => {
@@ -19,7 +19,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <div className="mb-8 flex justify-center">
-            <img src={logo} alt="Judo - Do Zero ao TEA" className="h-32 w-auto animate-float" />
+            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-40 md:h-48 w-auto animate-float" />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl"
+              className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl animate-bounce-slow"
               onClick={scrollToEnroll}
             >
               Quero me inscrever agora
@@ -56,7 +56,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-6 border-2 hover:bg-primary/5"
+              className="text-lg px-8 py-6 border-2 hover:bg-primary/5 transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Saiba mais

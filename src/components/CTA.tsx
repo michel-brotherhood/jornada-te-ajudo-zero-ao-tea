@@ -50,14 +50,31 @@ const CTA = () => {
               </p>
             </div>
             
-            <div className="text-center">
-              <Button 
-                size="lg" 
-                className="text-xl px-12 py-8 bg-gradient-to-r from-primary via-secondary to-coral hover:opacity-90 transition-opacity shadow-xl hover:shadow-2xl w-full md:w-auto"
+            <div className="text-center space-y-6">
+              <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-coral/20 rounded-lg p-6 animate-fade-in">
+                <p className="text-sm text-muted-foreground mb-2">Investimento único:</p>
+                <div className="flex items-center justify-center gap-3">
+                  <span className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
+                    R$ 197,00
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">ou 12x de R$ 19,04</p>
+              </div>
+              
+              <a 
+                href="https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                Quero começar agora
-              </Button>
-              <p className="text-sm text-muted-foreground mt-4">
+                <Button 
+                  size="lg" 
+                  className="text-xl px-12 py-8 bg-gradient-to-r from-primary via-secondary to-coral hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full md:w-auto animate-pulse"
+                >
+                  Quero começar agora
+                </Button>
+              </a>
+              <p className="text-sm text-muted-foreground">
                 Acesso imediato após a confirmação do pagamento
               </p>
             </div>
