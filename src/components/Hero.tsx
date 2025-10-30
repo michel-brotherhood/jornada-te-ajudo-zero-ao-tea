@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import logo from "@/assets/logo.png";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const Hero = () => {
   const scrollToEnroll = () => {
@@ -18,8 +19,21 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in space-y-4 md:space-y-6">
-          <div className="mb-6 md:mb-8 flex justify-center">
-            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-24 sm:h-28 md:h-36 lg:h-44 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
+          <div className="mb-4 md:mb-6 flex justify-center">
+            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
+          </div>
+
+          <div className="mb-6 md:mb-8 flex justify-center px-4">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="rounded-2xl shadow-2xl w-full max-w-2xl border-2 border-primary/20"
+            >
+              <source src={heroVideo} type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
           </div>
           
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight px-4">

@@ -1,9 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Facebook, Instagram, Users } from "lucide-react";
-import carolProfessional from "@/assets/carol-professional.webp";
+import carolProfessional from "@/assets/carol-professional-new.webp";
 import carolMain from "@/assets/carol-main.webp";
 import carolActivity1 from "@/assets/carol-activity-1.webp";
 import carolActivity2 from "@/assets/carol-activity-2.webp";
+import carolActivity3 from "@/assets/carol-activity-3.webp";
+import carolActivity4 from "@/assets/carol-activity-4.webp";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -84,6 +86,24 @@ const About = () => {
                       <img 
                         src={carolActivity2} 
                         alt="Momentos especiais da jornada" 
+                        className="rounded-lg shadow-lg w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
+                    <div className="p-1">
+                      <img 
+                        src={carolActivity3} 
+                        alt="Carol e sua filha juntas" 
+                        className="rounded-lg shadow-lg w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
+                    <div className="p-1">
+                      <img 
+                        src={carolActivity4} 
+                        alt="Momentos de conexão e amor" 
                         className="rounded-lg shadow-lg w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover"
                       />
                     </div>
