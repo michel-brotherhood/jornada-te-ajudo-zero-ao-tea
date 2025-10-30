@@ -54,9 +54,11 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col items-center lg:items-start gap-2">
-              <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse" style={{ animationDuration: '2s' }} />
+              <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse lg:hidden" style={{ animationDuration: '2s' }} />
               <p className="text-base sm:text-lg font-semibold text-foreground">
-                O Curso Do Zero ao TEA nasceu exatamente pra isso.
+                O Curso Do Zero ao TEA nasceu exatamente pra isso
+                <Heart className="hidden lg:inline-block w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse ml-1 -mt-1" style={{ animationDuration: '2s' }} />
+                <span className="lg:hidden">.</span>
               </p>
             </div>
             
