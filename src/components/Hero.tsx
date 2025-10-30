@@ -19,10 +19,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in space-y-4 md:space-y-6">
           <div className="mb-6 md:mb-8 flex justify-center">
-            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-28 sm:h-32 md:h-40 lg:h-48 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
+            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-24 sm:h-28 md:h-36 lg:h-44 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
           </div>
           
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight px-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight px-4">
             <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
               Você já se sentiu perdido(a)
             </span>

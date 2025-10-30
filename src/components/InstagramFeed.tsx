@@ -33,20 +33,33 @@ const InstagramFeed = () => {
             <p className="text-sm md:text-base">
               Para ver nossos posts mais recentes, visite nosso perfil no Instagram.
             </p>
-            <p className="text-xs md:text-sm italic">
-              💡 <strong>Dica:</strong> Para integrar posts automaticamente, você pode usar serviços como:
-            </p>
-            <ul className="text-xs md:text-sm text-left max-w-md mx-auto space-y-2">
-              <li>• <strong>Instagram Graph API</strong> (requer aprovação do Facebook)</li>
-              <li>• <strong>EmbedSocial</strong> ou <strong>Behold</strong> (ferramentas pagas)</li>
-              <li>• <strong>Widget customizado</strong> com integração manual</li>
-            </ul>
+            
+            <div className="bg-muted/50 rounded-lg p-4 mt-6 text-left">
+              <p className="text-xs md:text-sm font-semibold text-foreground mb-3">
+                💡 Como integrar posts do Instagram:
+              </p>
+              <ul className="text-xs md:text-sm space-y-3">
+                <li className="flex flex-col gap-1">
+                  <strong className="text-foreground">1. Instagram Graph API</strong>
+                  <span className="text-muted-foreground">Requer aprovação do Facebook e configuração técnica. Permite exibir posts automaticamente usando a API oficial.</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <strong className="text-foreground">2. Serviços Terceiros</strong>
+                  <span className="text-muted-foreground">Ferramentas como <strong>EmbedSocial</strong>, <strong>Behold</strong> ou <strong>Juicer</strong> (pagas) que geram um código de widget para incorporar.</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <strong className="text-foreground">3. Atualização Manual no Código</strong>
+                  <span className="text-muted-foreground">Adicione os posts manualmente no arquivo InstagramFeed.tsx, criando um array com as imagens e legendas dos seus posts. Você atualiza quando quiser adicionar novos conteúdos.</span>
+                </li>
+              </ul>
+            </div>
+            
             <div className="pt-4">
               <a
                 href="https://www.instagram.com/jornadateajudo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-coral hover:text-coral/80 font-semibold underline"
+                className="text-coral hover:text-coral/80 font-semibold underline transition-colors"
               >
                 Ver todos os posts →
               </a>

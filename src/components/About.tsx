@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Facebook, Instagram, Users } from "lucide-react";
+import carolProfessional from "@/assets/carol-professional.webp";
 import carolMain from "@/assets/carol-main.webp";
 import carolActivity1 from "@/assets/carol-activity-1.webp";
 import carolActivity2 from "@/assets/carol-activity-2.webp";
@@ -12,7 +13,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <Card className="p-6 sm:p-8 md:p-10 lg:p-12 border-2 border-primary/20">
-            <div className="text-center mb-6 md:mb-8">
+            <div className="text-center mb-8 md:mb-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-2">
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Sobre a Carol Magalhães
@@ -23,16 +24,16 @@ const About = () => {
               </p>
             </div>
             
-            <div className="mb-6 md:mb-8">
-              <img 
-                src={carolMain} 
-                alt="Carol Magalhães - Mentora e criadora do JornadaTEAJudo" 
-                className="rounded-lg shadow-lg w-full h-auto object-cover animate-fade-in mx-auto max-w-2xl"
-              />
-            </div>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start mb-8 md:mb-10">
+              <div className="flex justify-center">
+                <img 
+                  src={carolProfessional} 
+                  alt="Carol Magalhães - Mentora e criadora do JornadaTEAJudo" 
+                  className="rounded-lg shadow-lg w-full h-auto object-cover animate-fade-in max-w-md"
+                />
+              </div>
 
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center mb-6 md:mb-8">
-              <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-muted-foreground">
+              <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-muted-foreground flex flex-col justify-center">
                 <p className="mb-3 md:mb-4 leading-relaxed text-sm sm:text-base">
                   A jornada do diagnóstico pode ser confusa, dolorosa e solitária — mas também pode se transformar em um caminho de descobertas, conexão e crescimento.
                 </p>
@@ -53,38 +54,51 @@ const About = () => {
                   Porque com apoio, conhecimento e afeto, é possível transformar o que assusta… em potência.
                 </p>
               </div>
+            </div>
 
-              <div>
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  plugins={[
-                    Autoplay({
-                      delay: 3000,
-                    }),
-                  ]}
-                  className="w-full"
-                >
-                  <CarouselContent>
-                    <CarouselItem>
+            <div className="mb-8 md:mb-10">
+              <Carousel
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                  }),
+                ]}
+                className="w-full max-w-3xl mx-auto"
+              >
+                <CarouselContent>
+                  <CarouselItem className="md:basis-1/2">
+                    <div className="p-2">
                       <img 
                         src={carolActivity1} 
                         alt="Carol Magalhães e sua filha em atividade" 
                         className="rounded-lg shadow-lg w-full h-auto object-cover"
                       />
-                    </CarouselItem>
-                    <CarouselItem>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-1/2">
+                    <div className="p-2">
                       <img 
                         src={carolActivity2} 
                         alt="Momentos especiais da jornada" 
                         className="rounded-lg shadow-lg w-full h-auto object-cover"
                       />
-                    </CarouselItem>
-                  </CarouselContent>
-                </Carousel>
-              </div>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-1/2">
+                    <div className="p-2">
+                      <img 
+                        src={carolMain} 
+                        alt="Carol Magalhães com sua filha" 
+                        className="rounded-lg shadow-lg w-full h-auto object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+              </Carousel>
             </div>
             
             <div className="flex justify-center gap-3 md:gap-4">

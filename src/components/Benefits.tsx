@@ -31,12 +31,17 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-background">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 px-2">
-            No <span className="bg-gradient-to-r from-secondary to-coral bg-clip-text text-transparent">"Do Zero ao TEA"</span>, você vai
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 px-2">
+            Do Zero ao TEA
           </h2>
+          <p className="text-lg md:text-xl text-muted-foreground mb-4 px-2">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-semibold">
+              Você vai:
+            </span>
+          </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">

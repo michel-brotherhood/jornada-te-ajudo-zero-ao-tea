@@ -38,7 +38,7 @@ const WhatsAppButton = () => {
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
       {/* Menu de opções */}
       {isMenuOpen && (
-        <div className="absolute bottom-full right-0 mb-4 flex flex-col gap-3 animate-fade-in">
+        <div className="absolute bottom-full right-0 mb-4 flex flex-col gap-2 md:gap-3 animate-fade-in">
           {options.map((option, index) => {
             const Icon = option.icon;
             return (
@@ -46,7 +46,7 @@ const WhatsAppButton = () => {
                 key={index}
                 href={option.href}
                 {...(option.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-                className="flex items-center gap-3 bg-background border-2 border-primary/20 hover:border-primary/40 px-4 py-3 rounded-full shadow-lg transition-all duration-500 hover:scale-105 group whitespace-nowrap"
+                className="flex items-center gap-2 md:gap-3 bg-background border-2 border-primary/20 hover:border-primary/40 px-3 md:px-4 py-2.5 md:py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 group whitespace-nowrap"
                 onClick={(e) => {
                   if (!option.isExternal) {
                     e.preventDefault();
@@ -56,8 +56,8 @@ const WhatsAppButton = () => {
                   }
                 }}
               >
-                <Icon className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium text-foreground">{option.text}</span>
+                <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                <span className="text-xs md:text-sm font-medium text-foreground">{option.text}</span>
               </a>
             );
           })}
@@ -74,7 +74,7 @@ const WhatsAppButton = () => {
           src={heartPuzzle} 
           alt="Menu" 
           className="w-12 h-12 md:w-14 md:h-14 animate-pulse hover:scale-110 transition-transform duration-700 drop-shadow-2xl"
-          style={{ animationDuration: '3s' }}
+          style={{ animationDuration: '2s' }}
         />
       </button>
     </div>
