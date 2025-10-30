@@ -13,7 +13,7 @@ const CTA = () => {
   ];
 
   return (
-    <section id="enroll" className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+    <section id="enroll" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <Card className="p-6 sm:p-8 md:p-10 lg:p-12 border-2 md:border-4 border-primary/20 shadow-2xl">
@@ -62,7 +62,7 @@ const CTA = () => {
               </div>
               
               <a 
-                href="https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32"
+                href="https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
