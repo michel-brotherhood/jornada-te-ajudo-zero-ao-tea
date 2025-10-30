@@ -4,7 +4,6 @@ import Benefits from "@/components/Benefits";
 import WhyDifferent from "@/components/WhyDifferent";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
-import InstagramFeed from "@/components/InstagramFeed";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -19,7 +18,6 @@ const Index = () => {
       <WhyDifferent />
       <About />
       <Testimonials />
-      <InstagramFeed />
       <CTA />
       <FAQ />
       <Footer />
