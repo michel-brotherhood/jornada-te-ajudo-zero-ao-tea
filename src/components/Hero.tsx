@@ -48,7 +48,8 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 pt-2 md:pt-4">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-lg hover:shadow-xl"
+              className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-lg hover:shadow-xl animate-pulse"
+              style={{ animationDuration: '4s' }}
               onClick={scrollToEnroll}
             >
               Quero me inscrever agora

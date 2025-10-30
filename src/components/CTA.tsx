@@ -53,12 +53,12 @@ const CTA = () => {
             <div className="text-center space-y-4 md:space-y-6">
               <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-coral/20 rounded-lg p-4 md:p-6 animate-fade-in">
                 <p className="text-xs sm:text-sm text-muted-foreground mb-2">Investimento único:</p>
-                <div className="flex items-center justify-center gap-3">
+                <div className="flex flex-col items-center justify-center gap-2">
                   <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
-                    R$ 197,00
+                    R$ 497,00
                   </span>
+                  <p className="text-sm sm:text-base text-muted-foreground">ou 12x de R$ 51,40*</p>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-2">ou 12x de R$ 19,04</p>
               </div>
               
               <a 
@@ -70,6 +70,7 @@ const CTA = () => {
                 <Button 
                   size="lg" 
                   className="w-full sm:w-auto text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-6 sm:py-7 md:py-8 bg-gradient-to-r from-primary via-secondary to-coral hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-xl hover:shadow-2xl animate-pulse"
+                  style={{ animationDuration: '4s' }}
                 >
                   Quero começar agora
                 </Button>

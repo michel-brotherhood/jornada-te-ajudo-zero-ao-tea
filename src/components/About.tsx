@@ -5,7 +5,7 @@ import carolWithDaughter from "@/assets/carol-with-daughter.webp";
 
 const About = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-muted/30">
+    <section id="about" className="py-12 md:py-16 lg:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <Card className="p-6 sm:p-8 md:p-10 lg:p-12 border-2 border-primary/20">
