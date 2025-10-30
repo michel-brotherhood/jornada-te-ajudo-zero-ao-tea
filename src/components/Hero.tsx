@@ -48,9 +48,9 @@ const Hero = () => {
             Com medo de errar, sem saber como agir — e desejando apenas entender e acolher?
           </p>
           
-          <div className="flex items-center justify-center gap-2">
-            <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral" />
-            <p className="text-base sm:text-lg font-semibold text-foreground">
+          <div className="flex flex-col items-center justify-center gap-2">
+            <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse" style={{ animationDuration: '2s' }} />
+            <p className="text-base sm:text-lg font-semibold text-foreground text-center">
               O Curso Do Zero ao TEA nasceu exatamente pra isso.
             </p>
           </div>
