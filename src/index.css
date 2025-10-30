@@ -121,26 +121,32 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  @keyframes typing {
-    from {
-      width: 0;
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px);
     }
-    to {
-      width: 100%;
-    }
-  }
-  
-  @keyframes blink {
     50% {
-      border-color: transparent;
+      transform: translateY(-5px);
     }
   }
   
-  .animate-typing {
-    overflow: hidden;
-    border-right: 3px solid;
-    white-space: nowrap;
-    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-    display: inline-block;
+  @keyframes icon-bounce {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    75% {
+      transform: scale(1.05) rotate(2deg);
+    }
+  }
+  
+  .animate-float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+  
+  .animate-icon-bounce {
+    animation: icon-bounce 3s ease-in-out infinite;
   }
 }

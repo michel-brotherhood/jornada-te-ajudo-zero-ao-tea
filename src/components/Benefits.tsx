@@ -40,7 +40,7 @@ const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 px-2">
-            <span className="animate-typing border-primary">Do Zero ao TEA</span>
+            <span className="inline-block animate-float-gentle">Do Zero ao TEA</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-4 px-2">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-semibold">
@@ -56,8 +56,8 @@ const Benefits = () => {
               className="p-5 sm:p-6 md:p-8 hover:shadow-xl transition-all duration-500 border-2 hover:border-secondary/50 bg-gradient-to-br from-card to-muted/20"
             >
               <div className="flex flex-col items-start">
-                <div className="mb-3 md:mb-4 p-2 md:p-3 rounded-xl bg-gradient-to-br from-primary to-secondary animate-pulse hover:scale-110 transition-transform duration-300" style={{ animationDuration: '3s' }}>
-                  <benefit.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                <div className="mb-3 md:mb-4 p-2 md:p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
+                  <benefit.icon className="w-5 h-5 md:w-6 md:h-6 text-white animate-icon-bounce" style={{ animationDelay: `${index * 0.2}s` }} />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 md:mb-3">{benefit.title}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{benefit.description}</p>
