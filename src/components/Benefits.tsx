@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Sparkles, Target, Eye, TrendingUp, Shield } from "lucide-react";
+import { Sparkles, Target, Eye, TrendingUp, Shield, LineChart } from "lucide-react";
 
 const Benefits = () => {
   const benefits = [
@@ -27,6 +27,11 @@ const Benefits = () => {
       icon: Shield,
       title: "Segurança e Apoio",
       description: "Sinta-se seguro(a) para acolher e apoiar o desenvolvimento"
+    },
+    {
+      icon: LineChart,
+      title: "Metodologia avançada",
+      description: "Nosso método foi testado e podemos apresentar a evolução dos resultados com base no uso"
     }
   ];
 
@@ -34,8 +39,8 @@ const Benefits = () => {
     <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 px-2">
-            Do Zero ao TEA
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 px-2 animate-fade-in">
+            <span className="inline-block hover:scale-110 transition-transform duration-300">Do Zero ao TEA</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-4 px-2">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-semibold">
@@ -52,7 +57,7 @@ const Benefits = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex flex-col items-start">
-                <div className="mb-3 md:mb-4 p-2 md:p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
+                <div className="mb-3 md:mb-4 p-2 md:p-3 rounded-xl bg-gradient-to-br from-primary to-secondary animate-pulse hover:scale-110 transition-transform duration-300" style={{ animationDuration: '3s' }}>
                   <benefit.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 md:mb-3">{benefit.title}</h3>
