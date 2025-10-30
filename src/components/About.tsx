@@ -24,12 +24,12 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start mb-8 md:mb-10">
-              <div className="flex justify-center">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center mb-8 md:mb-10">
+              <div className="flex justify-center items-center">
                 <img 
                   src={carolProfessional} 
                   alt="Carol Magalhães - Mentora e criadora do JornadaTEAJudo" 
-                  className="rounded-lg shadow-lg w-full h-auto object-cover animate-fade-in max-w-md"
+                  className="rounded-lg shadow-lg w-full h-auto object-cover animate-fade-in max-w-[280px] sm:max-w-xs"
                 />
               </div>
 
@@ -56,7 +56,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="mb-8 md:mb-10">
+            <div className="mb-8 md:mb-10 px-4">
               <Carousel
                 opts={{
                   align: "center",
@@ -67,33 +67,33 @@ const About = () => {
                     delay: 3000,
                   }),
                 ]}
-                className="w-full max-w-3xl mx-auto"
+                className="w-full max-w-4xl mx-auto"
               >
-                <CarouselContent>
-                  <CarouselItem className="md:basis-1/2">
-                    <div className="p-2">
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
+                    <div className="p-1">
                       <img 
                         src={carolActivity1} 
                         alt="Carol Magalhães e sua filha em atividade" 
-                        className="rounded-lg shadow-lg w-full h-auto object-cover"
+                        className="rounded-lg shadow-lg w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover"
                       />
                     </div>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-1/2">
-                    <div className="p-2">
+                  <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
+                    <div className="p-1">
                       <img 
                         src={carolActivity2} 
                         alt="Momentos especiais da jornada" 
-                        className="rounded-lg shadow-lg w-full h-auto object-cover"
+                        className="rounded-lg shadow-lg w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover"
                       />
                     </div>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-1/2">
-                    <div className="p-2">
+                  <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
+                    <div className="p-1">
                       <img 
                         src={carolMain} 
                         alt="Carol Magalhães com sua filha" 
-                        className="rounded-lg shadow-lg w-full h-auto object-cover"
+                        className="rounded-lg shadow-lg w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover"
                       />
                     </div>
                   </CarouselItem>
