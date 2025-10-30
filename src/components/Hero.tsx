@@ -16,13 +16,13 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/3 w-36 h-36 bg-coral/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <div className="mb-8 flex justify-center">
-            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-32 md:h-40 lg:h-48 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 relative z-10">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in space-y-4 md:space-y-6">
+          <div className="mb-6 md:mb-8 flex justify-center">
+            <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-28 sm:h-32 md:h-40 lg:h-48 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
           </div>
           
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight px-4">
             <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
               Você já se sentiu perdido(a)
             </span>
@@ -30,25 +30,25 @@ const Hero = () => {
             <span className="text-foreground">diante do autismo?</span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             Com medo de errar, sem saber como agir — e desejando apenas entender e acolher?
           </p>
           
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <Heart className="w-6 h-6 text-coral fill-coral" />
-            <p className="text-lg font-semibold text-foreground">
+          <div className="flex items-center justify-center gap-2">
+            <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral" />
+            <p className="text-base sm:text-lg font-semibold text-foreground">
               O Curso Do Zero ao TEA nasceu exatamente pra isso.
             </p>
           </div>
           
-          <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Não é um curso técnico, cheio de termos difíceis. É um curso feito por quem vive o autismo todos os dias — com o coração de mãe, o olhar de profissional e a sensibilidade de quem acredita que <strong className="text-primary">conhecimento é amor</strong>.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 pt-2 md:pt-4">
             <Button 
               size="lg" 
-              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-lg hover:shadow-xl"
+              className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={scrollToEnroll}
             >
               Quero me inscrever agora
@@ -56,7 +56,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 border-2 hover:bg-primary/5 transition-all duration-700 hover:scale-105"
+              className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 border-2 hover:bg-primary/5 transition-all duration-700 hover:scale-105"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Saiba mais

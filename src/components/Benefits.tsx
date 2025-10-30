@@ -31,27 +31,27 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 md:py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+        <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 px-2">
             No <span className="bg-gradient-to-r from-secondary to-coral bg-clip-text text-transparent">"Do Zero ao TEA"</span>, você vai
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {benefits.map((benefit, index) => (
             <Card 
               key={index}
-              className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/50 bg-gradient-to-br from-card to-muted/20"
+              className="p-5 sm:p-6 md:p-8 hover:shadow-xl transition-all duration-500 border-2 hover:border-secondary/50 bg-gradient-to-br from-card to-muted/20 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex flex-col items-start">
-                <div className="mb-4 p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
-                  <benefit.icon className="w-6 h-6 text-white" />
+                <div className="mb-3 md:mb-4 p-2 md:p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
+                  <benefit.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 md:mb-3">{benefit.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{benefit.description}</p>
               </div>
             </Card>
           ))}
