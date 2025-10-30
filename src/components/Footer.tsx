@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
             <div className="mt-4 text-center">
               <p className="text-xs text-muted-foreground">
-                Desenvolvido por <span className="font-semibold text-foreground">ID_Lab</span>
+                Desenvolvido por <a href="https://idlab.art.br" target="_blank" rel="noopener noreferrer" className="font-semibold text-destructive hover:text-destructive/80 transition-colors">ID_Lab</a>
               </p>
             </div>
           </div>
