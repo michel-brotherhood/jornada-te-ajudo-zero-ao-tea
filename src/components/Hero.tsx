@@ -23,10 +23,21 @@ const Hero = () => {
           <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
         </div>
 
+        {/* Título principal acima de tudo */}
+        <div className="text-center animate-fade-in mb-8 md:mb-12 max-w-4xl mx-auto">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+            <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
+              Você já se sentiu perdido(a)
+            </span>
+            <br />
+            <span className="text-foreground">diante do autismo?</span>
+          </h1>
+        </div>
+
         {/* Layout lado a lado no desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Coluna do Vídeo */}
-          <div className="flex justify-center lg:justify-end animate-fade-in order-2 lg:order-1">
+          <div className="flex justify-center lg:justify-end animate-fade-in">
             <video 
               autoPlay 
               loop 
@@ -40,15 +51,7 @@ const Hero = () => {
           </div>
 
           {/* Coluna do Texto */}
-          <div className="text-center lg:text-left animate-fade-in space-y-4 md:space-y-6 order-1 lg:order-2">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
-                Você já se sentiu perdido(a)
-              </span>
-              <br />
-              <span className="text-foreground">diante do autismo?</span>
-            </h1>
-            
+          <div className="text-center lg:text-left animate-fade-in space-y-4 md:space-y-6">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
               Com medo de errar, sem saber como agir — e desejando apenas entender e acolher?
             </p>
