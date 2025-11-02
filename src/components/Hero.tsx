@@ -19,7 +19,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 relative z-10">
         {/* Logo centralizado no topo */}
-        <div className="mb-8 md:mb-12 flex justify-center animate-fade-in">
+        <div className="mb-12 md:mb-16 lg:mb-20 flex justify-center animate-fade-in">
           <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
         </div>
 

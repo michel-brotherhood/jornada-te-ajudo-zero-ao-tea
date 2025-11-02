@@ -1,5 +1,6 @@
 // Desenvolvido por Michel Brotherhood
 import { Heart, Instagram, Facebook, Users } from "lucide-react";
+import logoFooter from "@/assets/logo-footer.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* About */}
             <div className="text-center md:text-left">
-              <h3 className="font-semibold text-lg mb-3 text-foreground">JornadaTEAJudo</h3>
+              <img src={logoFooter} alt="JornadaTEAJudo" className="h-16 w-auto mx-auto md:mx-0 mb-3" />
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Transformando o diagnóstico em jornada de amor, conhecimento e acolhimento.
               </p>
