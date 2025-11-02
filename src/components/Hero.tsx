@@ -24,7 +24,7 @@ const Hero = () => {
         </div>
 
         {/* Título principal acima de tudo */}
-        <div className="text-center animate-fade-in mb-8 md:mb-12 max-w-4xl mx-auto">
+        <div className="text-center animate-fade-in mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
               Você já se sentiu perdido(a)
