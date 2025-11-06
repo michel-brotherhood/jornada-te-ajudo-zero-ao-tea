@@ -8,7 +8,48 @@
     <meta name="author" content="JornadaTEAJudo" />
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/cB4b3Jd05fg98H5meR3zixHBRJ52/uploads/1761838893378-00d9d231-b154-4e2f-b071-63ba2d76ec65.ico">
 
-    
+    <!-- Meta Pixel Code (visitas + clique .botaocta) -->
+    <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '859718019724936');
+
+    /* Visitas no site */
+    fbq('track', 'PageView');          // padrão do Meta (já cobre "visitas")
+    /* Opcional: ative se quiser contabilizar como "ViewContent" também */
+    // fbq('track', 'ViewContent');
+
+    /* Clique em botões/links com a classe .botaocta (delegação, pega elementos dinâmicos) */
+    document.addEventListener('click', function (ev) {
+      var el = ev.target.closest && ev.target.closest('.botaocta');
+      if (!el) return;
+
+      var label = (el.getAttribute('data-label') || el.innerText || el.textContent || '')
+                    .trim().slice(0,100);
+
+      // Evento customizado (recomendo criar conversão personalizada no Events Manager)
+      fbq('trackCustom', 'CTA_Click', {
+        button_label: label,
+        page_path: location.pathname
+      });
+
+      // Se preferir usar evento padrão (ex.: otimizar para Lead), use esta linha em vez da de cima:
+      // fbq('track', 'Lead', { content_name: label, content_category: 'CTA', value: 0, currency: 'BRL' });
+    });
+    </script>
+
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=859718019724936&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
     
     <meta property="og:type" content="website" />
 

@@ -137,7 +137,7 @@ const CTA = () => {
               >
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-6 sm:py-7 md:py-8 bg-gradient-to-r from-primary via-secondary to-coral hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-xl hover:shadow-2xl animate-pulse"
+                  className="botaocta w-full sm:w-auto text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-6 sm:py-7 md:py-8 bg-gradient-to-r from-primary via-secondary to-coral hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-xl hover:shadow-2xl animate-pulse"
                   style={{ animationDuration: '4s' }}
                 >
                   {timeLeft.isExpired ? 'Quero começar agora' : 'Quero começar agora com 10% OFF'}
