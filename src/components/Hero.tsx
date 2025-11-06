@@ -31,10 +31,10 @@ const Hero = () => {
         <div className="text-center animate-fade-in mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
-              Você já se sentiu perdido(a)
+              Jornada TEA Judo: Você já se sentiu perdido(a)
             </span>
             <br />
-            <span className="block mt-3 md:mt-4 text-foreground">diante do autismo?</span>
+            <span className="block mt-3 md:mt-4 text-foreground">diante do autismo infantil?</span>
           </h1>
         </div>
 
@@ -57,20 +57,20 @@ const Hero = () => {
           {/* Coluna do Texto */}
           <div className="text-center lg:text-left animate-fade-in space-y-4 md:space-y-6">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              Com medo de errar, sem saber como agir — e desejando apenas entender e acolher?
+              Com medo de errar ao lidar com uma criança autista, sem saber como agir no TEA — e desejando apenas entender e acolher?
             </p>
             
             <div className="flex flex-col items-center lg:items-start gap-2">
               <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse lg:hidden" style={{ animationDuration: '2s' }} />
               <p className="text-base sm:text-lg font-semibold text-foreground">
-                O Curso Do Zero ao TEA nasceu exatamente pra isso
+                O Curso Do Zero ao TEA da Jornada TEA Judo nasceu exatamente pra isso
                 <Heart className="hidden lg:inline-block w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse ml-1 -mt-1" style={{ animationDuration: '2s' }} />
                 <span className="lg:hidden">.</span>
               </p>
             </div>
             
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
-              Não é um curso técnico, cheio de termos difíceis. É um curso feito por quem vive o autismo todos os dias — com o coração de mãe, o olhar de profissional e a sensibilidade de quem acredita que <strong className="text-primary">conhecimento é amor</strong>.
+              Não é um curso técnico, cheio de termos difíceis. É um curso feito por quem vive o TEA (Transtorno do Espectro Autista) todos os dias — com o coração de mãe, o olhar de profissional e a sensibilidade de quem acredita que <strong className="text-primary">conhecimento sobre autismo é amor</strong>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-2 md:pt-4">
