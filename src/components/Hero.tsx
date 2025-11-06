@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import logo from "@/assets/logo.png";
 import heroVideo from "@/assets/hero-video.mp4";
+import { useCountdown } from "@/hooks/useCountdown";
 
 const Hero = () => {
+  const promoEndDate = new Date('2025-11-06T21:00:00');
+  const timeLeft = useCountdown(promoEndDate);
+  
   const scrollToEnroll = () => {
     document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -76,7 +80,7 @@ const Hero = () => {
                 style={{ animationDuration: '4s' }}
                 onClick={scrollToEnroll}
               >
-                Quero me inscrever agora
+                {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
               </Button>
               <Button 
                 size="lg" 
