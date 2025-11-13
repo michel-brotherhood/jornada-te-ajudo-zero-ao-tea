@@ -1,8 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift, Image, Calendar, BookOpen, Heart, MessageSquare, Star } from "lucide-react";
+import { useCountdown } from "@/hooks/useCountdown";
 
 const Bonus = () => {
+  const promoEndDate = new Date('2025-11-06T21:00:00');
+  const timeLeft = useCountdown(promoEndDate);
+  
+  const scrollToEnroll = () => {
+    document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const bonusMaterials = [
     {
       icon: Image,
@@ -98,10 +106,11 @@ const Bonus = () => {
               </p>
               <Button
                 size="lg"
-                className="botaocta bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
-                onClick={() => window.open('https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20curso%20Do%20Zero%20ao%20TEA', '_blank')}
+                className="botaocta w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-lg hover:shadow-xl animate-pulse"
+                style={{ animationDuration: '4s' }}
+                onClick={scrollToEnroll}
               >
-                Quero Receber os Materiais
+                {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
               </Button>
             </CardContent>
           </Card>
