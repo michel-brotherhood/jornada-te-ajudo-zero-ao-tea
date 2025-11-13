@@ -3,6 +3,7 @@ import ForWho from "@/components/ForWho";
 import Benefits from "@/components/Benefits";
 import WhyDifferent from "@/components/WhyDifferent";
 import About from "@/components/About";
+import Bonus from "@/components/Bonus";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -17,6 +18,7 @@ const Index = () => {
       <Benefits />
       <WhyDifferent />
       <About />
+      <Bonus />
       <Testimonials />
       <CTA />
       <FAQ />
