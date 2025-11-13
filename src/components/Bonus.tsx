@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Gift, Image, Calendar, BookOpen, Heart, MessageSquare, Star, CheckCircle2 } from "lucide-react";
+import { Gift, Image, Calendar, BookOpen, Heart, MessageSquare, Star } from "lucide-react";
 
 const Bonus = () => {
   const bonusMaterials = [
@@ -32,11 +32,6 @@ const Bonus = () => {
       icon: Star,
       title: "Autonomia",
       description: "Recursos para promover independência nas atividades"
-    },
-    {
-      icon: CheckCircle2,
-      title: "Guias de Aplicação",
-      description: "Orientações práticas de como usar cada material"
     }
   ];
 
@@ -52,7 +47,7 @@ const Bonus = () => {
           </div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Quem entra no curso não recebe só teoria. Eu preparei{" "}
-            <span className="font-semibold text-primary">7 materiais visuais e práticos</span>{" "}
+            <span className="font-semibold text-primary">6 materiais visuais e práticos</span>{" "}
             pra te ajudar no dia a dia com a criança — seja em casa, na escola ou na clínica.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4 leading-relaxed">
