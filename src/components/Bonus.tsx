@@ -2,14 +2,39 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift, Image, Calendar, BookOpen, Heart, MessageSquare, Star } from "lucide-react";
 import { useCountdown } from "@/hooks/useCountdown";
+import { useEffect, useRef, useState } from "react";
 
 const Bonus = () => {
   const promoEndDate = new Date('2025-11-06T21:00:00');
   const timeLeft = useCountdown(promoEndDate);
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   
   const scrollToEnroll = () => {
     document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = cardsRef.current.indexOf(entry.target as HTMLDivElement);
+            if (index !== -1) {
+              setVisibleCards((prev) => new Set(prev).add(index));
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const bonusMaterials = [
     {
@@ -68,27 +93,34 @@ const Bonus = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {bonusMaterials.map((material, index) => {
             const Icon = material.icon;
+            const isVisible = visibleCards.has(index);
             return (
-              <Card 
+              <div
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-primary/20"
+                ref={(el) => (cardsRef.current[index] = el)}
+                className={`transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
+                <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-primary/20 h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {material.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {material.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {material.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {material.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             );
           })}
         </div>
