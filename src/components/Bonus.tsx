@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Gift, Image, Calendar, BookOpen, Heart, MessageSquare, Star } from "lucide-react";
 
 const Bonus = () => {
@@ -91,10 +92,17 @@ const Bonus = () => {
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 Materiais Prontos para Usar
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 Todos os recursos podem ser impressos, personalizados e aplicados imediatamente 
                 no seu contexto — seja você mãe, pai, professor ou terapeuta.
               </p>
+              <Button
+                size="lg"
+                className="botaocta bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
+                onClick={() => window.open('https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20curso%20Do%20Zero%20ao%20TEA', '_blank')}
+              >
+                Quero Receber os Materiais
+              </Button>
             </CardContent>
           </Card>
         </div>
