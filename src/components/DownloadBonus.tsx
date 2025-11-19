@@ -24,7 +24,7 @@ const DownloadBonus = () => {
               className="download-button group relative"
               aria-label="Baixar material bônus"
             >
-              <span className="button-text">Baixar PDF</span>
+              <span className="button-text">quero meu brinde agora</span>
               <Download className="button-icon" size={24} strokeWidth={2.5} />
             </button>
           </div>
@@ -33,7 +33,7 @@ const DownloadBonus = () => {
 
       <style>{`
         .download-button {
-          width: 150px;
+          width: 220px;
           height: 50px;
           border-radius: 20px;
           border: none;
