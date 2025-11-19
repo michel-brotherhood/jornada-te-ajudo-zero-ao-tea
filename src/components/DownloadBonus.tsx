@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import { Download, Check } from "lucide-react";
 
 const DownloadBonus = () => {
   const handleDownload = () => {
@@ -19,116 +19,221 @@ const DownloadBonus = () => {
           </p>
           
           <div className="pt-8 flex justify-center">
-            <button
-              onClick={handleDownload}
-              className="download-button group relative"
-              aria-label="Baixar material bônus"
-            >
-              <span className="button-text">quero meu brinde agora</span>
-              <Download className="button-icon" size={24} strokeWidth={2.5} />
-            </button>
+            <label className="download-label">
+              <input 
+                type="checkbox" 
+                className="download-input"
+                onClick={handleDownload}
+              />
+              <div className="circle">
+                <Download className="icon" size={24} strokeWidth={2.5} />
+                <div className="square"></div>
+              </div>
+              <span className="title">quero meu brinde agora</span>
+              <span className="title">Baixado!</span>
+            </label>
           </div>
         </div>
       </div>
 
       <style>{`
-        .download-button {
-          width: 220px;
-          height: 50px;
-          border-radius: 20px;
-          border: none;
-          box-shadow: 1px 1px hsl(var(--secondary) / 0.37);
-          padding: 5px 10px;
-          background-color: hsl(var(--secondary));
-          color: hsl(var(--secondary-foreground));
-          font-family: inherit;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 1;
+        .download-label {
+          background-color: transparent;
+          border: 2px solid hsl(var(--secondary));
+          display: flex;
+          align-items: center;
+          border-radius: 50px;
+          width: 240px;
           cursor: pointer;
-          filter: drop-shadow(0 0 15px hsl(var(--secondary) / 0.6));
-          transition: all 0.5s ease;
+          transition: all 0.4s ease;
+          padding: 5px;
           position: relative;
-          overflow: visible;
         }
 
-        .button-icon {
+        .download-label::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: hsl(var(--secondary-foreground));
+          width: 8px;
+          height: 8px;
+          transition: all 0.4s ease;
+          border-radius: 100%;
+          margin: auto;
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .download-input {
           display: none;
+        }
+
+        .title {
+          font-size: 17px;
+          color: hsl(var(--foreground));
+          transition: all 0.4s ease;
+          position: absolute;
+          right: 18px;
+          bottom: 14px;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .title:last-child {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .circle {
+          height: 45px;
+          width: 45px;
+          border-radius: 50%;
+          background-color: hsl(var(--secondary));
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.4s ease;
+          position: relative;
+          box-shadow: 0 0 0 0 hsl(var(--secondary-foreground));
+          overflow: hidden;
+        }
+
+        .circle .icon {
+          color: hsl(var(--secondary-foreground));
+          width: 24px;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          transition: all 0.4s ease;
         }
 
-        .button-text {
-          display: inline-block;
-          transition: opacity 0.3s ease;
-        }
-
-        .download-button:hover {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-        }
-
-        .download-button:hover .button-text {
+        .circle .square {
+          aspect-ratio: 1;
+          width: 15px;
+          border-radius: 2px;
+          background-color: hsl(var(--secondary-foreground));
           opacity: 0;
-          display: none;
-        }
-
-        .download-button:hover .button-icon {
-          display: block;
-        }
-
-        .download-button:hover::after {
-          content: "";
+          visibility: hidden;
           position: absolute;
-          width: 16px;
-          height: 3px;
-          background-color: hsl(var(--secondary));
-          left: 50%;
           top: 50%;
-          margin-left: -8px;
-          margin-top: 10px;
-          animation: download-animate 0.9s linear infinite;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.4s ease;
         }
 
-        .download-button:hover::before {
+        .circle::before {
           content: "";
           position: absolute;
-          top: -3px;
-          left: -3px;
-          width: calc(100% + 6px);
-          height: calc(100% + 6px);
-          border: 3.5px solid transparent;
-          border-top: 3.5px solid hsl(var(--secondary-foreground));
-          border-right: 3.5px solid hsl(var(--secondary-foreground));
-          border-radius: 50%;
-          animation: rotate-border 2s linear infinite;
+          left: 0;
+          top: 0;
+          background-color: hsl(var(--primary));
+          width: 100%;
+          height: 0;
+          transition: all 0.4s ease;
         }
 
-        @keyframes rotate-border {
+        .download-label:has(.download-input:checked) {
+          width: 57px;
+          animation: installed 0.4s ease 3.5s forwards;
+        }
+
+        .download-label:has(.download-input:checked)::before {
+          animation: rotate 3s ease-in-out 0.4s forwards;
+        }
+
+        .download-input:checked + .circle {
+          animation: pulse 1s forwards, circleDelete 0.2s ease 3.5s forwards;
+          rotate: 180deg;
+        }
+
+        .download-input:checked + .circle::before {
+          animation: installing 3s ease-in-out forwards;
+        }
+
+        .download-input:checked + .circle .icon {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .download-input:checked ~ .circle .square {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .download-input:checked ~ .title {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .download-input:checked ~ .title:last-child {
+          animation: showInstalledMessage 0.4s ease 3.5s forwards;
+        }
+
+        @keyframes pulse {
           0% {
-            transform: rotate(0deg);
+            scale: 0.95;
+            box-shadow: 0 0 0 0 hsl(var(--secondary-foreground) / 0.7);
+          }
+          70% {
+            scale: 1;
+            box-shadow: 0 0 0 16px hsl(var(--secondary-foreground) / 0);
           }
           100% {
-            transform: rotate(360deg);
+            scale: 0.95;
+            box-shadow: 0 0 0 0 hsl(var(--secondary-foreground) / 0);
           }
         }
 
-        @keyframes download-animate {
+        @keyframes installing {
+          from {
+            height: 0;
+          }
+          to {
+            height: 100%;
+          }
+        }
+
+        @keyframes rotate {
           0% {
-            transform: translateY(0);
+            transform: rotate(-90deg) translate(27px) rotate(0);
             opacity: 1;
+            visibility: visible;
+          }
+          99% {
+            transform: rotate(270deg) translate(27px) rotate(270deg);
+            opacity: 1;
+            visibility: visible;
           }
           100% {
-            transform: translateY(20px);
             opacity: 0;
+            visibility: hidden;
           }
         }
 
-        .download-button:active {
-          transform: scale(0.95);
+        @keyframes installed {
+          100% {
+            width: 190px;
+            border-color: hsl(var(--primary));
+          }
+        }
+
+        @keyframes circleDelete {
+          100% {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+
+        @keyframes showInstalledMessage {
+          100% {
+            opacity: 1;
+            visibility: visible;
+            right: 56px;
+          }
         }
       `}</style>
     </section>
