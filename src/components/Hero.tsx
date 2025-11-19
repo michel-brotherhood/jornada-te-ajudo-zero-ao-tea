@@ -77,9 +77,9 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="botaocta w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 
-                  bg-gradient-to-r from-primary via-secondary to-coral 
-                  hover:backdrop-blur-md hover:from-primary/80 hover:via-secondary/80 hover:to-coral/80
-                  hover:border hover:border-white/20 hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+                  backdrop-blur-md bg-gradient-to-r from-primary/80 via-secondary/80 to-coral/80 
+                  border border-white/20
+                  hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] hover:border-white/30
                   transition-all duration-700 hover:scale-105 animate-pulse"
                 style={{ animationDuration: '4s' }}
                 onClick={scrollToEnroll}
