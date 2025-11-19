@@ -40,7 +40,7 @@ const DownloadBonus = () => {
           font-size: 17px;
           padding: 12px 20px;
           color: white;
-          background: linear-gradient(144deg, hsl(var(--primary)), hsl(var(--secondary)) 50%, hsl(var(--accent)));
+          background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--coral)));
           border: none;
           box-shadow: 0 0.7em 1.5em -0.5em hsl(var(--primary) / 0.527);
           letter-spacing: 0.05em;
