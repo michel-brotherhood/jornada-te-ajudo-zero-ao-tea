@@ -21,71 +21,84 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/3 w-36 h-36 bg-coral/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 relative z-10">
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16 relative z-10">
         {/* Logo centralizado no topo */}
-        <div className="mb-6 md:mb-8 lg:mb-10 flex justify-center animate-fade-in">
-          <img src={logo} alt="Jornada TEA Judo - Do Zero ao TEA" className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto animate-pulse" style={{ animationDuration: '3s' }} />
+        <div className="mb-8 md:mb-10 lg:mb-12 flex justify-center animate-fade-in">
+          <img 
+            src={logo} 
+            alt="Jornada TEA Judo - Do Zero ao TEA" 
+            className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto transition-transform hover:scale-105 duration-300" 
+          />
         </div>
 
         {/* Título principal acima de tudo */}
-        <div className="text-center animate-fade-in mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
+        <div className="text-center animate-fade-in mb-10 md:mb-14 lg:mb-16 max-w-5xl mx-auto">
+          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 animate-fade-in">
+            <span className="text-sm md:text-base font-medium text-primary">Curso Do Zero ao TEA</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+            <span className="bg-gradient-to-r from-primary via-coral to-secondary bg-clip-text text-transparent animate-gradient">
               TEA judo, juntos
             </span>
-            <br />
-            <span className="block mt-3 md:mt-4 text-foreground">Transformando desafios em oportunidades de aprendizado e crescimento</span>
           </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Transformando desafios em oportunidades de aprendizado e crescimento
+          </p>
         </div>
 
         {/* Layout lado a lado no desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Coluna do Vídeo */}
-          <div className="flex justify-center lg:justify-end animate-fade-in">
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="rounded-2xl shadow-2xl w-full max-w-lg border-2 border-primary/20"
-            >
-              <source src={heroVideo} type="video/mp4" />
-              Seu navegador não suporta vídeos.
-            </video>
+          <div className="flex justify-center lg:justify-end animate-scale-in order-2 lg:order-1">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-coral to-secondary rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="relative rounded-2xl shadow-2xl w-full max-w-lg border-2 border-primary/20 transition-transform group-hover:scale-[1.02] duration-300"
+              >
+                <source src={heroVideo} type="video/mp4" />
+                Seu navegador não suporta vídeos.
+              </video>
+            </div>
           </div>
 
           {/* Coluna do Texto */}
-          <div className="text-center lg:text-left animate-fade-in space-y-4 md:space-y-6">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              Já se sentiu perdido ao lidar com uma criança autista? Sem saber como agir no dia a dia do TEA e desejando apenas entender, acolher e fazer a diferença?
-            </p>
-            
-            <div className="flex flex-col items-center lg:items-start gap-2">
-              <Heart className="w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse lg:hidden" style={{ animationDuration: '2s' }} />
-              <p className="text-base sm:text-lg font-semibold text-foreground">
-                O Curso Do Zero ao TEA da Jornada TEA Judo nasceu exatamente pra isso
-                <Heart className="hidden lg:inline-block w-5 h-5 md:w-6 md:h-6 text-coral fill-coral animate-pulse ml-1 -mt-1" style={{ animationDuration: '2s' }} />
-                <span className="lg:hidden">.</span>
+          <div className="text-center lg:text-left animate-fade-in space-y-6 md:space-y-8 order-1 lg:order-2">
+            <div className="space-y-4">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Já se sentiu perdido ao lidar com uma criança autista? Sem saber como agir no dia a dia do TEA e desejando apenas entender, acolher e fazer a diferença?
               </p>
+              
+              <div className="flex items-center justify-center lg:justify-start gap-3 bg-gradient-to-r from-primary/10 to-coral/10 rounded-xl p-4 border border-primary/20">
+                <Heart className="w-6 h-6 md:w-7 md:h-7 text-coral fill-coral flex-shrink-0 animate-pulse" style={{ animationDuration: '2s' }} />
+                <p className="text-base sm:text-lg font-semibold text-foreground">
+                  O Curso Do Zero ao TEA nasceu exatamente pra isso
+                </p>
+              </div>
             </div>
             
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
-              Não é um curso técnico, cheio de termos difíceis. É um curso feito por quem vive o TEA (Transtorno do Espectro Autista) todos os dias — com o coração de mãe, o olhar de profissional e a sensibilidade de quem acredita que <strong className="text-primary">conhecimento sobre autismo é amor</strong>.
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+              Não é um curso técnico, cheio de termos difíceis. É um curso feito por quem vive o TEA todos os dias — com o coração de mãe, o olhar de profissional e a sensibilidade de quem acredita que <strong className="text-primary font-semibold">conhecimento sobre autismo é amor</strong>.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-2 md:pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <Button 
                 size="lg" 
-                className="botaocta w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-700 hover:scale-105 shadow-lg hover:shadow-xl animate-pulse"
-                style={{ animationDuration: '4s' }}
+                className="botaocta group relative w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
                 onClick={scrollToEnroll}
               >
-                {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
+                <span className="relative z-10 font-semibold">
+                  {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 border-2 hover:bg-primary/5 transition-all duration-700 hover:scale-105"
+                className="w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105 font-medium"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Saiba mais
