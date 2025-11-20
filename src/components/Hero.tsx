@@ -7,10 +7,6 @@ import { useCountdown } from "@/hooks/useCountdown";
 const Hero = () => {
   const promoEndDate = new Date('2025-11-06T21:00:00');
   const timeLeft = useCountdown(promoEndDate);
-  
-  const scrollToEnroll = () => {
-    document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-secondary/5">
@@ -47,7 +43,7 @@ const Hero = () => {
         </div>
 
         {/* Layout lado a lado no desktop */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 md:gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Coluna do Vídeo */}
           <div className="flex justify-center lg:justify-end animate-scale-in order-1 w-full">
             <div className="relative group">
@@ -67,29 +63,38 @@ const Hero = () => {
 
           {/* Botões - aparecem após vídeo no mobile */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:hidden order-2 w-full px-4">
-            <Button 
-              size="lg" 
-              className="botaocta group relative w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
-              onClick={scrollToEnroll}
+            <a 
+              href={timeLeft.isExpired 
+                ? "https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512"
+                : "https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512&offDiscount=METODOLIVRE"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
             >
-              <span className="relative z-10 font-semibold">
-                {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </Button>
+              <Button 
+                size="lg" 
+                className="botaocta group relative w-full text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
+              >
+                <span className="relative z-10 font-semibold">
+                  {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Button>
+            </a>
             <Button 
               size="lg" 
               variant="outline"
               className="w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105 font-medium"
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Saiba mais
             </Button>
           </div>
 
           {/* Coluna do Texto */}
-          <div className="text-center lg:text-left animate-fade-in space-y-6 md:space-y-8 order-3 lg:order-2">
-            <div className="space-y-4">
+          <div className="text-center lg:text-left animate-fade-in space-y-8 md:space-y-6 order-3 lg:order-2">
+            <div className="space-y-6 md:space-y-4">
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Já se sentiu perdido ao lidar com uma criança autista? Sem saber como agir no dia a dia do TEA e desejando apenas entender, acolher e fazer a diferença?
               </p>
@@ -108,21 +113,30 @@ const Hero = () => {
             
             {/* Botões - aparecem aqui no desktop */}
             <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-start pt-4">
-              <Button 
-                size="lg" 
-                className="botaocta group relative w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
-                onClick={scrollToEnroll}
+              <a 
+                href={timeLeft.isExpired 
+                  ? "https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512"
+                  : "https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512&offDiscount=METODOLIVRE"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
-                <span className="relative z-10 font-semibold">
-                  {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="botaocta group relative w-full text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
+                >
+                  <span className="relative z-10 font-semibold">
+                    {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              </a>
               <Button 
                 size="lg" 
                 variant="outline"
                 className="w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105 font-medium"
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Saiba mais
               </Button>
