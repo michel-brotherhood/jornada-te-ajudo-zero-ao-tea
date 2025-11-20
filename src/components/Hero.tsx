@@ -49,7 +49,7 @@ const Hero = () => {
         {/* Layout lado a lado no desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Coluna do Vídeo */}
-          <div className="flex justify-center lg:justify-end animate-scale-in order-2 lg:order-1">
+          <div className="flex justify-center lg:justify-end animate-scale-in order-1 lg:order-1">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary via-coral to-secondary rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
               <video 
@@ -66,7 +66,7 @@ const Hero = () => {
           </div>
 
           {/* Coluna do Texto */}
-          <div className="text-center lg:text-left animate-fade-in space-y-6 md:space-y-8 order-1 lg:order-2">
+          <div className="text-center lg:text-left animate-fade-in space-y-6 md:space-y-8 order-2 lg:order-2">
             <div className="space-y-4">
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Já se sentiu perdido ao lidar com uma criança autista? Sem saber como agir no dia a dia do TEA e desejando apenas entender, acolher e fazer a diferença?
