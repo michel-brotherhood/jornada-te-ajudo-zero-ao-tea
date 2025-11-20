@@ -1,4 +1,4 @@
-import { Download, Check } from "lucide-react";
+import { Download } from "lucide-react";
 
 const DownloadBonus = () => {
   const handleDownload = () => {
@@ -21,93 +21,114 @@ const DownloadBonus = () => {
           <div className="pt-8 flex justify-center">
             <button
               onClick={handleDownload}
-              className="Download-button"
+              className="download-button group relative"
               aria-label="Baixar material bônus"
             >
-              <Download size={25} strokeWidth={2.5} />
-              quero meu brinde agora
+              <span className="button-text">quero meu brinde agora</span>
+              <Download className="button-icon" size={24} strokeWidth={2.5} />
             </button>
           </div>
         </div>
       </div>
 
       <style>{`
-        .Download-button {
-          display: flex;
-          align-items: center;
-          font-family: inherit;
-          font-weight: 500;
-          font-size: 17px;
-          padding: 12px 20px;
-          color: white;
-          background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--coral)));
+        .download-button {
+          width: 220px;
+          height: 50px;
+          border-radius: 20px;
           border: none;
-          box-shadow: 0 0.7em 1.5em -0.5em hsl(var(--primary) / 0.527);
-          letter-spacing: 0.05em;
-          border-radius: 8px;
+          box-shadow: 1px 1px hsl(var(--secondary) / 0.37);
+          padding: 5px 10px;
+          background-color: hsl(var(--secondary));
+          color: hsl(var(--secondary-foreground));
+          font-family: inherit;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 1;
           cursor: pointer;
+          filter: drop-shadow(0 0 15px hsl(var(--secondary) / 0.6));
+          transition: all 0.5s ease;
           position: relative;
-          transition: all 0.2s;
+          overflow: visible;
         }
 
-        .Download-button svg {
-          margin-right: 8px;
-          width: 25px;
-        }
-
-        .Download-button:hover {
-          box-shadow: 0 0.5em 1.5em -0.5em hsl(var(--secondary));
-          border-top-left-radius: 40px;
-          border-bottom-right-radius: 40px;
-        }
-
-        .Download-button:active {
-          box-shadow: 0 0.3em 1em -0.5em hsl(var(--secondary));
-        }
-
-        .Download-button::before {
-          content: "";
-          width: 4px;
-          height: 40%;
-          background-color: white;
+        .button-icon {
+          display: none;
           position: absolute;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          left: 0;
-          transition: all 0.2s;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
 
-        .Download-button::after {
+        .button-text {
+          display: inline-block;
+          transition: opacity 0.3s ease;
+        }
+
+        .download-button:hover {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+
+        .download-button:hover .button-text {
+          opacity: 0;
+          display: none;
+        }
+
+        .download-button:hover .button-icon {
+          display: block;
+        }
+
+        .download-button:hover::after {
           content: "";
-          width: 4px;
-          height: 40%;
-          background-color: white;
           position: absolute;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-          right: 0;
-          transition: all 0.2s;
+          width: 16px;
+          height: 3px;
+          background-color: hsl(var(--secondary));
+          left: 50%;
+          top: 50%;
+          margin-left: -8px;
+          margin-top: 10px;
+          animation: download-animate 0.9s linear infinite;
         }
 
-        .Download-button:hover::before,
-        .Download-button:hover::after {
-          height: 60%;
+        .download-button:hover::before {
+          content: "";
+          position: absolute;
+          top: -3px;
+          left: -3px;
+          width: calc(100% + 6px);
+          height: calc(100% + 6px);
+          border: 3.5px solid transparent;
+          border-top: 3.5px solid hsl(var(--secondary-foreground));
+          border-right: 3.5px solid hsl(var(--secondary-foreground));
+          border-radius: 50%;
+          animation: rotate-border 2s linear infinite;
         }
 
-        .Download-button:hover::before {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-          border-top-right-radius: 0px;
-          border-bottom-right-radius: 0px;
-          transform: translate(5px, -15px) rotate(45deg);
+        @keyframes rotate-border {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
 
-        .Download-button:hover::after {
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px;
-          transform: translate(-5px, 15px) rotate(45deg);
+        @keyframes download-animate {
+          0% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(20px);
+            opacity: 0;
+          }
+        }
+
+        .download-button:active {
+          transform: scale(0.95);
         }
       `}</style>
     </section>
