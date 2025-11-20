@@ -31,10 +31,10 @@ const Hero = () => {
         <div className="text-center animate-fade-in mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent">
-              Jornada TEA Judo: Você já se sentiu perdido(a)
+              TEA judo, juntos
             </span>
             <br />
-            <span className="block mt-3 md:mt-4 text-foreground">diante do autismo infantil?</span>
+            <span className="block mt-3 md:mt-4 text-foreground">Transformando desafios em oportunidades de aprendizado e crescimento</span>
           </h1>
         </div>
 
@@ -57,7 +57,7 @@ const Hero = () => {
           {/* Coluna do Texto */}
           <div className="text-center lg:text-left animate-fade-in space-y-4 md:space-y-6">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              Com medo de errar ao lidar com uma criança autista, sem saber como agir no TEA — e desejando apenas entender e acolher?
+              Já se sentiu perdido ao lidar com uma criança autista? Sem saber como agir no dia a dia do TEA e desejando apenas entender, acolher e fazer a diferença?
             </p>
             
             <div className="flex flex-col items-center lg:items-start gap-2">
