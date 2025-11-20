@@ -47,9 +47,9 @@ const Hero = () => {
         </div>
 
         {/* Layout lado a lado no desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Coluna do Vídeo */}
-          <div className="flex justify-center lg:justify-end animate-scale-in order-1 lg:order-1">
+          <div className="flex justify-center lg:justify-end animate-scale-in order-1 w-full">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary via-coral to-secondary rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
               <video 
@@ -65,8 +65,30 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Botões - aparecem após vídeo no mobile */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:hidden order-2 w-full px-4">
+            <Button 
+              size="lg" 
+              className="botaocta group relative w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
+              onClick={scrollToEnroll}
+            >
+              <span className="relative z-10 font-semibold">
+                {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105 font-medium"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Saiba mais
+            </Button>
+          </div>
+
           {/* Coluna do Texto */}
-          <div className="text-center lg:text-left animate-fade-in space-y-6 md:space-y-8 order-2 lg:order-2">
+          <div className="text-center lg:text-left animate-fade-in space-y-6 md:space-y-8 order-3 lg:order-2">
             <div className="space-y-4">
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Já se sentiu perdido ao lidar com uma criança autista? Sem saber como agir no dia a dia do TEA e desejando apenas entender, acolher e fazer a diferença?
@@ -84,7 +106,8 @@ const Hero = () => {
               Não é um curso técnico, cheio de termos difíceis. É um curso feito por quem vive o TEA todos os dias — com o coração de mãe, o olhar de profissional e a sensibilidade de quem acredita que <strong className="text-primary font-semibold">conhecimento sobre autismo é amor</strong>.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            {/* Botões - aparecem aqui no desktop */}
+            <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-start pt-4">
               <Button 
                 size="lg" 
                 className="botaocta group relative w-full sm:w-auto text-base md:text-lg px-8 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
