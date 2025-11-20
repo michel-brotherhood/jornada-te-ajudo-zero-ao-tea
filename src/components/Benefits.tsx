@@ -1,7 +1,12 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Sparkles, Target, Eye, TrendingUp, Shield, LineChart } from "lucide-react";
+import { useCountdown } from "@/hooks/useCountdown";
 
 const Benefits = () => {
+  const promoEndDate = new Date('2025-11-06T21:00:00');
+  const timeLeft = useCountdown(promoEndDate);
+  
   const benefits = [
     {
       icon: Sparkles,
@@ -64,6 +69,29 @@ const Benefits = () => {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="flex justify-center mt-12 md:mt-16">
+          <a 
+            href={timeLeft.isExpired 
+              ? "https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512"
+              : "https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512&offDiscount=METODOLIVRE"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            <Button 
+              size="lg" 
+              className="botaocta group relative w-full sm:w-auto text-base md:text-lg px-8 md:px-12 py-6 md:py-7 bg-gradient-to-r from-primary via-coral to-secondary hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
+            >
+              <span className="relative z-10 font-semibold">
+                {timeLeft.isExpired ? 'Quero me inscrever agora' : 'Quero me inscrever com 10% OFF'}
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary via-coral to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Button>
+          </a>
         </div>
       </div>
     </section>
